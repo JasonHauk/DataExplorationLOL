@@ -1,4 +1,6 @@
-# Exmploratory Data Analysis
+title = boo
+
+## Exploratory Data Analysis
 
 by Jason Hauk (jhauk@ucsd.edu)
 
@@ -11,8 +13,6 @@ This is a project for DSC80 at UCSD in which we were asked to perform explorator
 ---
 
 ## Cleaning and EDA
-
-<iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 
 ---
 
