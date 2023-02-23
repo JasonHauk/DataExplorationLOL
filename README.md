@@ -1,6 +1,5 @@
  
-
-## Exploratory Data Analysis
+# Exploratory Data Analysis
 
 by Jason Hauk (jhauk@ucsd.edu)
 
