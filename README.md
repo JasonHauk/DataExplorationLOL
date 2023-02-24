@@ -28,8 +28,30 @@ Now let us explore the process of how I got to this cleaned up data:
 
 ## Cleaning and EDA
 
+I started by reading my data into a pandas dataframe I called data_raw. One of the first decisions I made was to look at individual players rather than the teams as a whole, so I removed all rows that had their position as team.
+
+The removal of these rows lefts many columns tracking team stats completely blanks and as such I deleted them:
+['firstdragon', 'dragons', 'opp_dragons', 'elementaldrakes', 'opp_elementaldrakes', 'infernals', 
+'mountains', 'clouds', 'oceans', 'chemtechs', 'hextechs', 'dragons (type unknown)', 'elders',
+'opp_elders', 'firstherald', 'heralds', 'opp_heralds', 'firstbaron', 'firsttower', 'towers',
+'opp_towers', 'firstmidtower', 'firsttothreetowers', 'turretplates', 'opp_turretplates', 'gspd']
+
+With the remaining columns there were still a couple changes I wanted to make to make the data more easily usable.
+I changed 'playoffs', 'results', 'firstblood', 'firstbloodassist', 'firstbloodkill', 'firstbloodvictim' all to booleans
+since they were previously ints of 1 or 0 to represent boolean values. I also changed 'date' to pd.datetime() rather than
+the string it was previously.
+
+After all of these changes I was left with a dataframe I called players_df with had isolated the player stats, gotten rid of superfluous
+columns, and converted columns to useable types.
+
+While this dataframe would have been perfectly fine to work with, I still found the number of columns to be complicating matters and so I distilled the data more into just the columns I wanted and rows that had lux as the champion. Originally, I thought this would be enough.
+
+<iframe src="assets/lux_all_pos.html" width=800 height=600 frameBorder=0></iframe>
+
+
+
 ```py
-print(counts[['champion', 'win', 'position' 'kills', 'deaths', 'assists', 'totalgold']].head().to_markdown(index=False))
+just_lux.head()
 ```
 
 |   | champion |  win  |  position | kills | deaths | assists | totalgold  |
