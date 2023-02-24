@@ -106,19 +106,17 @@ This pivot table seems to support my theory that supports focus on a more assist
 
 ## Assessment of Missingness
 
-Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
+Taking a step back from the datafram we had just been looking at, I wanted to go back and explore the raw data. Specifically, I was curious if any of the columns I left behind we missing data due to the value of the data itself. That is to say, was there any data not missing at random?
 
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
+An example of Not Missing at Random (NMAR) I found would be the missing values in the column teamname. It seems that it's always the same team missing since the teamid value matches for every row that was missing a value in teamname. Perhaps the person entering the data didn't like the team or more maybe it was in another language and they weren't able to translate it. Regardless of the reason, it seems probable that the reason it wasn't included was because of the teamname value itself.
 
-| Quarter     |   Count |
-|:------------|--------:|
-| Fall 2020   |       3 |
-| Winter 2021 |       2 |
-| Spring 2021 |       6 |
-| Summer 2021 |       4 |
-| Fall 2021   |      55 |
+Another example of missing data that I found curious was when a playerid was missing. I wasn't sure what would cause this, but I had theory that it could be correlated or dependent on the league that the game/player played in, since leagues with bigger audiences and more budgets seemed less liekly to have these types of mistakes.
+
+I wanted to run a perumtation test to check out my theory and to do so I would use total variation distance as I was dealing with categorical distributions. My null hypothesis would be that the distribution of 'league' when 'playerid' is missing is the same as the distribution of 'league' when 'playerid' is not missing, and thus the two columns are independent. My alternative hypothesis would be that the distribution of 'league' when 'playerid' is missing is different then the distribution of 'league' when 'playerid' is not missing, and thus the two columns are dependent. I got the following results when I ran my permutation test:
+
+<iframe src="assets/league_mar.html" width=600 height=600 frameBorder=0></iframe>
+
+With a p-value of 0, which is less than 0.05, I was forced to reject the null and thus support the hypothesis that the two columns are dependent. Therefor, I believe that the 'playerid' column is Missing at Random (MAR) rather than MCAR.
 
 ---
 
