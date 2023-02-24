@@ -15,9 +15,7 @@ Looking at all of the competitive match data from 2022 I originally began with 1
 
 The 7 columns included:
 
-champion: String containing only 'Lux' since at this stage all of the player stats we wanted were stats from her
-win: Booleans reflecting True if the game was won and False otherwise
-position: String was either sup or mid
+champion: String containing only 'Lux' since at this stage all of the player stats we wanted were stats from her<br>win: Booleans reflecting True if the game was won and False otherwise<br>position: String was either sup or mid
 
 Then 4 columns all of which contained ints and were different ways to measure how well they did during the game:
 kills, deaths, assists, and totalgold
