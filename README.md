@@ -78,17 +78,17 @@ Now I was very curious to see if these trends would stay true if we split up the
 
 <iframe src="assets/lux_win_per_split.html" width=600 height=600 frameBorder=0></iframe>
 
-When you break down the wins based on position an interesting change occurs. While the support position still wins a majority of it's games, the midlane lux games do not. Midlane lux has a win percentage of 39.47% compared to the support lux win percentage of 55.42%. This creates an interesting discrepency which is at the heart of the question I'm seeking to answer: is lux better at midlane or support? Based on this graph along I might be tempted to say that lux is better at support, but we still have a few tests to run before we could support a conclusion like that.
+When you break down the wins based on position an interesting change occurs. While the support position still wins a majority of their games, the midlane lux games do not. Midlane lux has a win percentage of 39.47% compared to the support lux win percentage of 55.42%. This creates an interesting discrepency which is at the heart of the question I'm seeking to answer: is lux better at midlane or support? Based on this graph alone I might be tempted to say that lux is better at support, but we still have a few tests to run before we could support a conclusion like that.
 
 First lets see if we can find any supportive evidence in the way that the amount of kills change based on role:
 
 <iframe src="assets/lux_kill_hist_split.html" width=600 height=600 frameBorder=0></iframe>
 
-This graph is interesting because it's the opposite of what I wouldv'e initially expected. Since support lux had a higher win percentage I also thought that they would end up having more kills. Looking at this graph, however, the left skew is less extreme for lux mid. This indicates that lux mid was in fact getting more kills.
+This graph is interesting because it's the opposite of what I would've initially expected. Since support lux had a higher win percentage I also thought that they would end up having more kills. Looking at this graph, however, the left skew is less extreme for lux mid. This indicates that lux mid was in fact getting more kills.
 
 <iframe src="assets/lux_kill_box_split.html" width=600 height=600 frameBorder=0></iframe>
 
-The previous histogram is supported by this boxplot which further illustrates the kill disparity between support and midlane. While the support lux is still stuck on a median of 1 kill game, midlane lux has a median of 2.5. It's pretty apparent that midlane lux is getting more kills, but does this disprove our theory that support lux is better than midlane lux? Not necesssarily...
+The previous histogram is supported by this boxplot which further illustrates the kill disparity between support and midlane. While the support lux is still stuck on a median of 1 kill a game, midlane lux has a median of 2.5. It's pretty apparent that midlane lux is getting more kills, but does this disprove our theory that support lux is better than midlane lux? Not necesssarily...
 
 A potential explanation for this discrepancy is that the roles are simply meant to do different things. Even if a midlane lux is getting more kills than a support lux, the midlaner isn't competing against the support. They're competing against the enemy midlaner. The same goes for the support not competing against mid, but rather the opposing teams support. The goal of a support might not be to get kills, but rather instead to support your teammates in getting them.
 
@@ -97,8 +97,10 @@ A potential explanation for this discrepancy is that the roles are simply meant 
 |:---------|-----------|----------:|  
 |   0-9    | 78.947368 | 48.297214 |
 |   9-18   | 21.052632 | 46.130031 |
-|   18-27  |  0.000000 | 5.263158 |
-|   27-36  |  0.000000 | 0.309598 |
+|   18-27  |  0.000000 | 5.263158  |
+|   27-36  |  0.000000 | 0.309598  |
+
+This pivot table seems to support my theory that supports focus on a more assist heavy playstyle. The pivot table is indexed by a range of assists that were obtained by the the luxes and then the columns split up mid and support. In each box is the percent of that position, which fit in that range of assists. For example, in the 0-9 row and in the middle column we have approx. 78.95, thus 78.95% of midlane lux got 0-9 assists. While a vast majority of midlane luxes got 0-9 assists, the supports saw a relatively close split between 0-9 and 9-18 assists. Once more, a majority of support lux got 9+ assists (the interval is left inclusive, right exclusive).
 
 ---
 
