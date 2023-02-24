@@ -62,7 +62,7 @@ just_lux.head()
 
 Once I had this dataframe it was important for me to get to understand the stats I was looking at before I tried to address my central question.
 
-<iframe src="assets/lux_win_perc.html" width=600 height=600 frameBorder=0></iframe>
+<iframe src="assets/lux_win_per.html" width=600 height=600 frameBorder=0></iframe>
 
 One of the first and simplest things that I looked at was how lux did overall in their games. From the graph it is easy to see that lux wins over 50% of her games and thus a majority of her games. That being said it's onlt 53.74% wins to 46.26% losses so it isn't by super wide margins.
 
@@ -76,7 +76,29 @@ The boxplot of her kills, reinforces what I had already speculated based on the 
 
 Now I was very curious to see if these trends would stay true if we split up the positions or if a trend might emerge. As such I began looking at the same data while also taking position into account. I discovered the following:
 
+<iframe src="assets/lux_win_per_split.html" width=600 height=600 frameBorder=0></iframe>
 
+When you break down the wins based on position an interesting change occurs. While the support position still wins a majority of it's games, the midlane lux games do not. Midlane lux has a win percentage of 39.47% compared to the support lux win percentage of 55.42%. This creates an interesting discrepency which is at the heart of the question I'm seeking to answer: is lux better at midlane or support? Based on this graph along I might be tempted to say that lux is better at support, but we still have a few tests to run before we could support a conclusion like that.
+
+First lets see if we can find any supportive evidence in the way that the amount of kills change based on role:
+
+<iframe src="assets/lux_kill_hist_split.html" width=600 height=600 frameBorder=0></iframe>
+
+This graph is interesting because it's the opposite of what I wouldv'e initially expected. Since support lux had a higher win percentage I also thought that they would end up having more kills. Looking at this graph, however, the left skew is less extreme for lux mid. This indicates that lux mid was in fact getting more kills.
+
+<iframe src="assets/lux_kill_box_split.html" width=600 height=600 frameBorder=0></iframe>
+
+The previous histogram is supported by this boxplot which further illustrates the kill disparity between support and midlane. While the support lux is still stuck on a median of 1 kill game, midlane lux has a median of 2.5. It's pretty apparent that midlane lux is getting more kills, but does this disprove our theory that support lux is better than midlane lux? Not necesssarily...
+
+A potential explanation for this discrepancy is that the roles are simply meant to do different things. Even if a midlane lux is getting more kills than a support lux, the midlaner isn't competing against the support. They're competing against the enemy midlaner. The same goes for the support not competing against mid, but rather the opposing teams support. The goal of a support might not be to get kills, but rather instead to support your teammates in getting them.
+
+| position |    mid    |    sup    |
+| assists  |           |           |
+|:---------|-----------|----------:|  
+|   0-9    | 78.947368 | 48.297214 |
+|   9-18   | 21.052632 | 46.130031 |
+|   18-27  |  0.000000 | 5.263158 |
+|   27-36  |  0.000000 | 0.309598 |
 
 ---
 
