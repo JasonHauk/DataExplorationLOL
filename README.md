@@ -100,7 +100,7 @@ A potential explanation for this discrepancy is that the roles are simply meant 
 |   18-27  |  0.000000 | 5.263158  |
 |   27-36  |  0.000000 | 0.309598  |
 
-This pivot table seems to support my theory that supports focus on a more assist heavy playstyle. The pivot table is indexed by a range of assists that were obtained by the the luxes and then the columns split up mid and support. In each box is the percent of that position, which fit in that range of assists. For example, in the 0-9 row and in the middle column we have approx. 78.95, thus 78.95% of midlane lux got 0-9 assists. While a vast majority of midlane luxes got 0-9 assists, the supports saw a relatively close split between 0-9 and 9-18 assists. Once more, a majority of support lux got 9+ assists (the interval is left inclusive, right exclusive).
+This pivot table seems to support my theory that supports focus on a more assist heavy playstyle. The pivot table is indexed by a range of assists that were obtained by the the luxes and then the columns split up mid and support. In each box is the percent of that position, which fit in that range of assists. For example, in the 0-9 row and in the middle column we have approx. 78.95, thus 78.95% of midlane lux got 0-9 assists. While a vast majority of midlane luxes got 0-9 assists, the supports saw a relatively close split between 0-9 and 9-18 assists. With a majority of support lux getting 9+ assists (the interval is left inclusive, right exclusive) it seems that my theory about lux mid and lux sup simply having different roles in the game is pretty likely.
 
 ---
 
@@ -121,3 +121,17 @@ With a p-value of 0, which is less than 0.05, I was forced to reject the null an
 ---
 
 ## Hypothesis Testing
+
+Now back to my original question, I had wondered if lux was better as a midlaner or support. I decided that the best way to analyze this was based on the win percentages, because as I explained other measurements like kills, assists, or gold could simply be changing due to the role that each position is supposed to play. That means the best way to measure if a champion is best played in a specific role, we should simply look at if they win in that role.
+
+As such, I wanted to see if the difference we had observed between the mid and sup win percentage was significant or not.<br>Null Hypothesis: There is no meaningful difference between playing lux sup or lux mid, and any difference observed can be attributed to random chance.<br>Alternative Hypothesis: Playing lux sup gives a statistically significant advantage over playing lux mid.
+
+To test my hypothesis I will be doing a permutation test using the mean differences between the win percentage of mid an sup. This was the result of my permutation test: 
+
+<iframe src="assets/perm_test.html" width=600 height=600 frameBorder=0></iframe>
+
+The resuling p-value was 0.0465.
+
+Since the p-value of 0.0465 is less than 0.05, with a confidence level of 95%, I chose to reject the null hypothesis. Thus our sample data instead supports our alternative hypothesis, that playing lux sup gives a meaningful adnvantage compared to playing lux mid.
+
+Thus I was able to answer my question: Is Lux better as a midlaner or a support characters?<br>-Lux is better as a support character :D
