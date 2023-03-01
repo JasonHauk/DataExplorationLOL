@@ -68,7 +68,7 @@ One of the first and simplest things that I looked at was how lux did overall in
 
 <iframe src="assets/lux_kill_hist.html" width=600 height=600 frameBorder=0></iframe>
 
-Next I wanted to get a better understanding of the impact that lux was having in the games that she was playing in. The histogram showing her kills shows the data is left-skewed indicating that many of her games she has a rather low kill count.
+Next I wanted to get a better understanding of the impact that lux was having in the games that she was playing in. The histogram showing her kills shows the data is right-skewed indicating that many of her games she has a rather low kill count.
 
 <iframe src="assets/lux_kill_box.html" width=600 height=600 frameBorder=0></iframe>
 
